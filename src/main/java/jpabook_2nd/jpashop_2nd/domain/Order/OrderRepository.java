@@ -1,4 +1,4 @@
-package jpabook_2nd.jpashop_2nd.Order;
+package jpabook_2nd.jpashop_2nd.domain.Order;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
