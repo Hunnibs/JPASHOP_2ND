@@ -1,15 +1,17 @@
-package jpabook_2nd.jpashop_2nd.Member;
+package jpabook_2nd.jpashop_2nd.repository;
 
 import jpabook_2nd.jpashop_2nd.domain.Member.Member;
-import jpabook_2nd.jpashop_2nd.domain.Member.MemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
+@ExtendWith(SpringExtension.class)
 class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
@@ -27,8 +29,8 @@ class MemberRepositoryTest {
         Member findMember = memberRepository.find(saveId);
 
         //then
-        Assertions.assertThat(member.getId()).isEqualTo(findMember.getId());
-        Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
-        Assertions.assertThat(member).isEqualTo(findMember);
+        assertThat(member.getId()).isEqualTo(findMember.getId());
+        assertThat(member.getName()).isEqualTo(findMember.getName());
+        assertThat(member).isEqualTo(findMember);
     }
 }

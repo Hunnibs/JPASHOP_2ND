@@ -1,7 +1,8 @@
-package jpabook_2nd.jpashop_2nd.domain.Order;
+package jpabook_2nd.jpashop_2nd.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jpabook_2nd.jpashop_2nd.domain.Order.Order;
 import org.springframework.stereotype.Repository;
 
 @Repository
