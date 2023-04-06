@@ -16,7 +16,7 @@ public class MemberService {
 
     /**
      *
-     * 회원 조회
+     * 회원 등록
      */
     @Transactional
     public Long join(Member member){
@@ -34,7 +34,7 @@ public class MemberService {
 
     /**
      *
-     * 회원 가입
+     * 회원 조회
      */
     public List<Member> findMembers(){
         return memberRepository.findAll();
