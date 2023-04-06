@@ -3,6 +3,7 @@ package jpabook_2nd.jpashop_2nd.domain.Item;
 import jakarta.persistence.*;
 import jpabook_2nd.jpashop_2nd.exception.NotEnoughStockException;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE")
+@Setter
 @Getter
 public abstract class Item {
     @Id @GeneratedValue
