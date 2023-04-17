@@ -2,16 +2,15 @@ package jpabook_2nd.jpashop_2nd.service;
 
 import jpabook_2nd.jpashop_2nd.domain.Item.Item;
 import jpabook_2nd.jpashop_2nd.domain.Member.Member;
-import jpabook_2nd.jpashop_2nd.domain.Order.Delivery;
-import jpabook_2nd.jpashop_2nd.domain.Order.DeliveryStatus;
-import jpabook_2nd.jpashop_2nd.domain.Order.Order;
-import jpabook_2nd.jpashop_2nd.domain.Order.OrderItem;
+import jpabook_2nd.jpashop_2nd.domain.Order.*;
 import jpabook_2nd.jpashop_2nd.repository.ItemRepository;
 import jpabook_2nd.jpashop_2nd.repository.MemberRepository;
 import jpabook_2nd.jpashop_2nd.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 
 @Service
@@ -46,6 +45,10 @@ public class OrderService {
 
     public Order find(Long id){
         return orderRepository.find(id);
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
     }
 }
 
